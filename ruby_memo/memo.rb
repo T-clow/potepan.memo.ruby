@@ -11,6 +11,10 @@ if memo_type == 1
   puts "メモの内容を入力してください："
   memo_content = gets.chomp
   
+  puts "終了後、Ctrl + D　を押します。"
+  
+  memo = STDIN.read
+  
    CSV.open("memos.csv", "a") do |csv|
     csv << [memo_content]
    end 
@@ -36,6 +40,8 @@ if memo_type == 2
 if memo_number.between?(1, memos.length)
   puts "新しいメモの内容を入力してください:"
   new_memo_content = gets.chomp  
+  puts "終了後、Ctrl + D　を押します。"
+  memo = STDIN.read
 
   memos[memo_number - 1][0] = new_memo_content
 
