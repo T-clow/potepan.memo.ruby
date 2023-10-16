@@ -8,8 +8,8 @@ memo_type = gets.to_i
 # 「memo_type」の値（1 or 2）によって処理を分岐させていきましょう。
 if memo_type == 1
   
-  puts "ファイル名を入力してください。"
-  file_name= gets.chomp
+  puts "拡張子を除いたファイル名を入力してください。"
+  file_name = gets.chomp + ".csv"
   
   puts "新規でメモを作成します。"
   puts "メモの内容を入力してください："
@@ -47,12 +47,11 @@ if memo_number.between?(1, memos.length)
     puts "既存のメモ内容: #{selected_memo[1]}"
 
     puts "新しいファイル名を入力してください:"
-    new_file_name = gets.chomp
+    new_file_name = gets.chomp + ".csv"
     puts "新しいメモの内容を入力してください:"
     new_memo_content = gets.chomp
     puts "終了後、Ctrl + Dを押します."
     memo = STDIN.read
-    
     selected_memo[0] = new_file_name
     selected_memo[1] = new_memo_content
 
